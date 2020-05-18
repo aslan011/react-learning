@@ -8,7 +8,7 @@ const Navbar = (props) => {
     return (
         <nav className="nav-wrapper red darken-3">
             <div className="container">
-                <a className="brand-logo">React Router (using Materialize)</a>
+                <a href='/' className="brand-logo left">React Router with Materialize</a>
                 <ul className="right">
                     <li><Link to='/'>Home</Link></li> {/*this is similar to href, however it does not refresh the page, much faster*/}
                     <li><NavLink to='/About'>About</NavLink></li> {/*this is similar to above, however NavLink toggle class "active"*/}

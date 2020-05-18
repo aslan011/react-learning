@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import Navbar from './components/Navbar'
-import { BrowserRouter, Route} from 'react-router-dom'
+import { BrowserRouter, Route, Switch} from 'react-router-dom'
 import Home from './components/Home'
 import Contact from './components/Contact';
 import About from './components/About';
+import Post from './components/Post';
 
 class App extends Component {
   render() {
@@ -11,9 +12,12 @@ class App extends Component {
     <BrowserRouter>
       <div className="App">
         <Navbar />
-        <Route exact path='/' component={Home}/>
-        <Route path='/About' component={About}/>
-        <Route path='/Contact' component={Contact}/>
+        <Switch>
+          <Route exact path='/' component={Home}/>
+          <Route path='/About' component={About}/>
+          <Route path='/Contact' component={Contact}/>
+          <Route path='/:post_id' component={Post} />  {/*this is passing a post id as a parameter to the componenet Post*/}
+        </Switch>       
       </div>
     </BrowserRouter>
   );
